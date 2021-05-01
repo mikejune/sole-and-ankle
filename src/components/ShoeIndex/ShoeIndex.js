@@ -48,11 +48,24 @@ const Wrapper = styled.div`
   /* My Solution w/o rearranging DOM */
   display: flex;
   flex-direction: row-reverse;
-  justify-content: flex-end;
+
+  /* Totally doesn't do anyhting if doing flex: 1 in MainColumn */
+  /* justify-content: flex-end; */
+
   gap: 24px;  /* Add fatter gap */
+
+  /* JC Modern Solution */
+  gap: 32px;
+  align-items: baseline;
 `;
 
-const LeftColumn = styled.div``;
+const LeftColumn = styled.div`
+  /* JC Solution */
+  flex-basis: 248px;
+
+  /* JC legacy solution */
+  /* margin-right: 32px; */
+`;
 
 const MainColumn = styled.div`
   /* My Solution */
@@ -63,6 +76,8 @@ const Header = styled.header`
   /* My Solution */
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
+
 `;
 
 const Title = styled.h2`
