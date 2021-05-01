@@ -25,7 +25,7 @@ const ShoeIndex = ({ sortId, setSortId }) => {
           </Select>
         </Header>
         <Spacer size={34} />
-        <ShoeGrid />
+        {/* <ShoeGrid /> */}
       </MainColumn>
       <LeftColumn>
         <Breadcrumbs>
@@ -42,13 +42,28 @@ const ShoeIndex = ({ sortId, setSortId }) => {
   );
 };
 
-const Wrapper = styled.div``;
+// My solution would be to just use a bunch of nested flexing.
+
+const Wrapper = styled.div`
+  /* My Solution w/o rearranging DOM */
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 24px;  /* Add fatter gap */
+`;
 
 const LeftColumn = styled.div``;
 
-const MainColumn = styled.div``;
+const MainColumn = styled.div`
+  /* My Solution */
+  flex: 1;
+`;
 
-const Header = styled.header``;
+const Header = styled.header`
+  /* My Solution */
+  display: flex;
+  justify-content: space-between;
+`;
 
 const Title = styled.h2`
   font-size: 1.5rem;
