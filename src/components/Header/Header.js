@@ -12,7 +12,9 @@ const Header = () => {
     <header>
       <SuperHeader />
       <MainHeader>
+      <Side>
         <Logo />
+      </Side>
         <Nav>
           <NavLink href="/sale">Sale</NavLink>
           <NavLink href="/new">New&nbsp;Releases</NavLink>
@@ -21,6 +23,7 @@ const Header = () => {
           <NavLink href="/kids">Kids</NavLink>
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
+        <Side />
       </MainHeader>
     </header>
   );
@@ -33,20 +36,35 @@ const MainHeader = styled.div`
   /* My Solution */
   display: flex;
   align-items: baseline;
-  margin-top: auto;
-  margin-bottom: auto;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  /* margin-top: auto; */
+  /* margin-bottom: auto; */
+  /* padding-top: 18px; */
+  /* padding-bottom: 18px; */
 
+  /* JC Solution */
+  height: 72px;
+
+  /* JC hacky solution for optical centering */
+  padding-top: 18px; 
+  padding-bottom: 18px;
 `;
 
 const Nav = styled.nav`
   /* My Solution */
   display: flex;
-  flex: 1;
-  justify-content: center;
-  gap: 84px;
+  /* flex: 1; */
+  /* justify-content: center; */
+  /* gap: 84px; */
+
+  /* JC Solution */
+  gap: 48px;
+  margin: 0 48px; /* Prevents nav from bumping into logo */
 `;
+
+/* JS Solution */
+const Side = styled.div`
+  flex: 1
+`
 
 const NavLink = styled.a`
   font-size: 1.125rem;
