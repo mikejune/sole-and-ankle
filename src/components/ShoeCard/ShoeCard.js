@@ -55,7 +55,7 @@ const Link = styled.a`
   color: inherit;
 
   /* My Solution */
-  flex-basis: 344px;
+  /* flex-basis: 344px; */
 `;
 
 const Wrapper = styled.article``;
